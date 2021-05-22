@@ -1,11 +1,12 @@
 {
   "name": "sass-color-transformation",
-  "displayName": "Sass color translation",
+  "displayName": "Sass color transformation",
   "description": "",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.56.0"
   },
+  "icon": "https://github.com/JJVvV/vscode-css-color-transition/blob/main/media/color-pencils.png",
   "categories": [
     "Other"
   ],

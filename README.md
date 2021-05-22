@@ -48,6 +48,8 @@ $hover-brand: $B60;
 
 ### Now we can try to write a css color in a sass file
 
+![example](media/color-codelens.png)
+
 // global.sass
 
 ```sass
