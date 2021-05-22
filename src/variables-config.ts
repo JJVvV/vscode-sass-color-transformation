@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { getVariablesConfig, funcColor, hexColor, getVariablesConfigUrl } from './utils';
+import { getVariablesConfig, funcColor, hexColor, getVariablesConfigUrl, cssVarColor } from './utils';
 import { IVariablesConfig, TColor, TVariables } from './types';
 
 let cached: TVariables | undefined;
@@ -15,13 +15,13 @@ export class VariablesConfig implements IVariablesConfig {
   }
 
   public colorParse(text: string): TColor[] {
-    return [hexColor, funcColor].reduce((strategies, strategy) => {
+    return [hexColor, funcColor, cssVarColor].reduce((strategies, strategy) => {
       return [ ...strategies, ...strategy(text) ];
     }, [] as TColor[]);
   }
 
   public load() {
-    if (vscode.workspace.getConfiguration("css-color-translation").get("enableCodeLens", true)) {
+    if (vscode.workspace.getConfiguration("sass-color-transformation").get("enableCodeLens", true)) {
       this.parsedColors = [];
       const variablesPath = getVariablesConfigUrl();
       if(!variablesPath) {

@@ -1,13 +1,10 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import * as path from 'path';
 import { CodelensProvider } from './codelens-provider';
-import { getExtension, getVariablesConfigUrl } from './utils';
-import { Text2Cariable } from './text-2-variable';
+import { getVariablesConfigUrl, Text2Variable } from './utils';
 import { VariablesConfig } from './variables-config';
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+import { TColor } from './types';
+
 export function activate(context: vscode.ExtensionContext) {
   let providerRegistrations: vscode.Disposable[] = [];
   const reload = () => {
@@ -24,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
         })
       );
     }
-    const languages = vscode.workspace.getConfiguration("css-color-translation").get("languages");
+    const languages = vscode.workspace.getConfiguration("sass-color-transformation").get("languages");
     providerRegistrations = [];
     if(Array.isArray(languages)){
       languages.forEach((language) => {
@@ -37,14 +34,10 @@ export function activate(context: vscode.ExtensionContext) {
     }
 
     providerRegistrations.push(
-      vscode.commands.registerCommand('css-color-translation.codelensAction', (alias: string, value: string, fileName: string, range: vscode.Range) => {
-        // Get the active text editor
+      vscode.commands.registerCommand('sass-color-transformation.codelensAction', (variable: string | undefined, color: TColor, fileName: string, range: vscode.Range) => {
         const editor = vscode.window.activeTextEditor;
-    
         if (editor) {
           editor.edit(editBuilder => {
-            const extension = getExtension(editor.document.fileName);
-            const variable = Text2Cariable.text2Variable(alias, extension);
             if(variable){
               editBuilder.replace(range, variable);
             }

@@ -1,82 +1,83 @@
 {
-	"name": "css-color-translation",
-	"displayName": "css-color-translation",
-	"description": "",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.56.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"*",
-		"onLanguage:css",
-		"onLanguage:less",
-		"onLanguage:sass",
-		"onLanguage:scss",
-		"onLanguage:styl"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"configuration": {
-			"title": "scss",
-			"properties": {
-				"css-color-translation.enableCodeLens": {
-					"type": "boolean",
-					"default": true,
-					"description": "enable css codeLens"
-				},
-				"css-color-translation.variablesConfigPath": {
-					"type": "string",
-					"default": "",
-					"description": "scss variables path"
-				},
-				"css-color-translation.languages": {
-					"type": "array",
-					"items": {
+  "name": "sass-color-transformation",
+  "displayName": "Sass color translation",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.56.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*",
+    "onLanguage:css",
+    "onLanguage:less",
+    "onLanguage:sass",
+    "onLanguage:scss",
+    "onLanguage:styl"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "scss",
+      "properties": {
+        "sass-color-transformation.enableCodeLens": {
+          "type": "boolean",
+          "default": true,
+          "description": "enable css codeLens"
+        },
+        "sass-color-transformation.variablesConfigPath": {
+          "type": "string",
+          "default": "",
+          "description": "scss variables path"
+        },
+        "sass-color-transformation.languages": {
+          "type": "array",
+          "items": {
             "type": "string",
             "enum": [
+              "css",
               "scss",
               "sass",
-							"stylus",
-							"less"
+              "stylus",
+              "less"
             ],
             "description": "language id"
           },
-					"default": ["scss", "sass", "stylus", "less"],
+          "default": ["css", "scss", "sass", "stylus", "less"],
           "description": "language"
-				}
-			}
-		},
-		"commands": [
-			
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile && npm run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.56.0",
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.0.4",
-		"@types/node": "^12.11.7",
-		"eslint": "^7.19.0",
-		"@typescript-eslint/eslint-plugin": "^4.14.1",
-		"@typescript-eslint/parser": "^4.14.1",
-		"glob": "^7.1.6",
-		"mocha": "^8.2.1",
-		"typescript": "^4.1.3",
-		"vscode-test": "^1.5.0"
-	},
-	"dependencies": {
-		"color": "^3.1.3",
-		"tinycolor": "0.0.1",
-		"tinycolor2": "^1.4.2"
-	}
+        }
+      }
+    },
+    "commands": [
+      
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.56.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "eslint": "^7.19.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  },
+  "dependencies": {
+    "color": "^3.1.3",
+    "tinycolor": "0.0.1",
+    "tinycolor2": "^1.4.2"
+  }
 }

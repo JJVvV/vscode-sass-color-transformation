@@ -1,18 +1,21 @@
 import { CodeLens, Range } from "vscode";
-import { TColor } from "./types";
+import { Alias, TColor } from "./types";
+import { getExtension, Text2Variable } from "./utils";
 
 export default class TipCodeLens extends CodeLens {
   constructor(
     fileName: string,
     range: Range,
-    alias: string,
+    alias: Alias,
     color: TColor
   ) {
+    const extension = getExtension(fileName);
+    const variable = Text2Variable.text2Variable(alias.name, extension);
     super(range, {
-      arguments: [alias, color, fileName, range],
-      command: "css-color-translation.codelensAction",
-      title: `${alias}`,
-      tooltip: `${color.originalColor} can be replaced by ${alias}, click to replace`
+      arguments: [variable, color, fileName, range],
+      command: "sass-color-transformation.codelensAction",
+      title: `${variable}`,
+      tooltip: `${color.originalColor} can be replaced by ${variable}, click to replace`
     });
   }
 }

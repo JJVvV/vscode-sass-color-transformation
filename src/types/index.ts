@@ -14,7 +14,17 @@ export type TRgbaColor = {
   a: number
 };
 
-export type TVariables = Map<string, { value: TRgbaColor | string, originalValue: string }>;
+export type TVariable = { 
+  value: TRgbaColor | string
+  originalValue: string
+  prefix: string 
+};
+
+export type Alias = {
+  name: string
+};
+
+export type TVariables = Map<string, TVariable>;
 
 export interface IVariablesConfig {
   colorParse(text: string): TColor[]
