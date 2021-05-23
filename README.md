@@ -28,7 +28,7 @@ Defines which languages have color transformation enabled. The languages that ar
 
 ## Get Started
 
-### create a variables config file first (use sass extension please)
+### create a variables config file first (use sass extension please).
 
 for example, we create a sass file named `variables-config.sass` and put it in `.vscode` folder
 
@@ -46,11 +46,11 @@ $hover-brand: $B60;
 --main-bg-color: $primary-brand;
 ```
 
-### Now we can try to write a css color in a sass file
-
-![example](media/color-codelens.png)
+### Now we can try to write a css color in a sass file and some sass variables will appear above if the color configured in the configuration file.
 
 ```sass
 body
   background-color: #0070CC
 ```
+
+![example](media/color-codelens.png)

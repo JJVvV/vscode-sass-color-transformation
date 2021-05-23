@@ -3,7 +3,7 @@
   "displayName": "Sass color transformation",
   "publisher": "jjvvv",
   "description": "Convert css color values ​​into variables.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.56.0"
   },
