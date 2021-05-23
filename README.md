@@ -50,8 +50,6 @@ $hover-brand: $B60;
 
 ![example](media/color-codelens.png)
 
-// global.sass
-
 ```sass
 body
   background-color: #0070CC
