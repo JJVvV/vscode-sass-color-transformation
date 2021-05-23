@@ -6,7 +6,20 @@
   "engines": {
     "vscode": "^1.56.0"
   },
-  "icon": "https://github.com/JJVvV/vscode-css-color-transition/blob/main/media/color-pencils.png",
+  "extensionKind": [
+    "ui"
+  ],
+  "keywords": [
+    "sass",
+    "scss",
+    "css",
+    "less",
+    "stylus",
+    "variable",
+    "color",
+    "rgb"
+  ],
+  "icon": "https://raw.githubusercontent.com/JJVvV/vscode-css-color-transition/main/media/color-pencils.png",
   "categories": [
     "Other"
   ],

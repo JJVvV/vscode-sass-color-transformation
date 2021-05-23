@@ -11,6 +11,8 @@ export function activate(context: vscode.ExtensionContext) {
     for (const existing of providerRegistrations) {
       existing.dispose();
     }
+    providerRegistrations = [];
+    VariablesConfig.clearCache();
     // watch variables config file
     const configPath = getVariablesConfigUrl();
     if(configPath) {
@@ -22,7 +24,6 @@ export function activate(context: vscode.ExtensionContext) {
       );
     }
     const languages = vscode.workspace.getConfiguration("sass-color-transformation").get("languages");
-    providerRegistrations = [];
     if(Array.isArray(languages)){
       languages.forEach((language) => {
         const registration = vscode.languages.registerCodeLensProvider({ 
