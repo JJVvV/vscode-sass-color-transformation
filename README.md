@@ -1,9 +1,14 @@
-# scss-color-transformation README
+# [scss-color-transformation](https://marketplace.visualstudio.com/items?itemName=jjvvv.sass-color-transformation)
 
 Convert color values ​​into variables.
 
 ![example](media/sass-color-variables.gif)
 
+## Installation
+
+[scss-color-transformation](https://marketplace.visualstudio.com/items?itemName=jjvvv.sass-color-transformation)
+
+## Configs
 
 #### `sass-color-transformation.enableCodeLens`
 
